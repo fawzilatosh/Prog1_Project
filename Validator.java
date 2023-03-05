@@ -1,4 +1,3 @@
-package Prog1_Project;
 public class Validator {
 
 	public static void main(String[] args) {
