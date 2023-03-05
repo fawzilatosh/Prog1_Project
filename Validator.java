@@ -17,6 +17,9 @@ public class Validator {
     }
 		
 	
+	
+	
+	
 	// EMAIL
 	
     public static boolean isEmail(String email) {
