@@ -1,4 +1,5 @@
 package Prog1_Project;
+
 public class Validator {
 
 	public static void main(String[] args) {
@@ -14,7 +15,20 @@ public class Validator {
         	}
         
     }
-		
+	
+	
+	// isAlphaNum() - check if a character is alphanumeric
+
+	// isSpecialChar() - check if a character is an acceptable special character
+	
+	// isPrefixChar() - only alphanumeric characters, dashes, periods, or underscores in prefix
+	
+	// isDomainChar() - can contain only alphanumeric characters, dashes, or periods
+	
+	// singleAtSign() - check if a String contain a single at sign (@). 
+	
+	
+	
 	// EMAIL
 	
     public static boolean isEmail(String email) {
