@@ -48,6 +48,7 @@ public class Validator {
 	         }
 	     }
 	     return true;
+	}
 
 	
 	// DOMAIN - check if the end of a String is a valid email domain
@@ -144,7 +145,7 @@ public class Validator {
     
     
     public static String isUsername(String username) {
-        // check if input is null or empty
+        // check if input is empty
         if (username == null || username.isEmpty()) {
             return "";
         }
@@ -201,8 +202,15 @@ public class Validator {
     
     public static boolean safePassword(String password) {
     	
-    	
-    }
+        // check if input contains at least one alphanumeric character
+        boolean hasAlphaNum = false;
+        for (int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
+            if (isAlphaNum(c)) {
+                hasAlphaNum = true;
+                break;
+            	}
+           
     
 
     ////////////////////////////////////////////////////////////////////////////////////
