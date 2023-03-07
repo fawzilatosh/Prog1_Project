@@ -41,8 +41,7 @@ public class Validator {
 //	» First character is alphanumeric.
 	
 	public static boolean isPrefix(String prefix) {
-		// If the input string has no characters, it's not a valid prefix
-		}
+	// If the input string has no characters, it's not a valid prefix
 	     if (prefix.length() == 0) {
 	         return false;
 	     }
