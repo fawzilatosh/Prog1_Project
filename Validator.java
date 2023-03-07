@@ -5,14 +5,6 @@ public class Validator {
 	public static void main(String[] args) {
 
 
-//		String[] emails = {""};
-//        for (String email : emails) {
-//            if (isEmail(email)) {
-//                System.out.println("true");
-//            } else {
-//                System.out.println("false");
-//            }
-//        	}
         }
 	
 	
@@ -45,9 +37,7 @@ public class Validator {
 	     if (prefix.length() == 0) {
 	         return false;
 	     }
-	     if (!Character.isLetterOrDigit(prefix.charAt(0))) {
-	         return false;
-	     }
+
 	     for (int i = 1; i < prefix.length(); i++) {
 	         char c = prefix.charAt(i);
 	         if (!isAlphaNum(c) || !isPrefixChar(c)) {
@@ -116,6 +106,8 @@ public class Validator {
 	
 	// EMAIL - check if a string is a valid email address
 	
+	// A valid email address consists of a prefix, '@' symbol, and domain. Both the prefix and the domain must be written in acceptable formats.
+	
     public static boolean isEmail(String email) {
         // check for single @ sign
         if (!singleAtSign(email)) {
@@ -151,15 +143,15 @@ public class Validator {
 
     
     
-    public static String isUsername(String input) {
+    public static String isUsername(String username) {
         // check if input is null or empty
-        if (input == null || input.isEmpty()) {
+        if (username == null || username.isEmpty()) {
             return "";
         }
 
         // check if input contains only allowed characters
-        for (int i = 0; i < input.length(); i++) {
-            char c = input.charAt(i);
+        for (int i = 0; i < username.length(); i++) {
+            char c = username.charAt(i);
             if (!isAlphaNum(c) && !isSpecialChar(c)) {
                 return "";
             }
@@ -167,8 +159,8 @@ public class Validator {
 
         // check if input contains at least one alphanumeric character
         boolean hasAlphaNum = false;
-        for (int i = 0; i < input.length(); i++) {
-            char c = input.charAt(i);
+        for (int i = 0; i < username.length(); i++) {
+            char c = username.charAt(i);
             if (isAlphaNum(c)) {
                 hasAlphaNum = true;
                 break;
@@ -179,32 +171,39 @@ public class Validator {
         }
 
         // check if input contains 7 or fewer characters
-        if (input.length() > 7) {
+        if (username.length() > 7) {
             return "";
         }
 
         // check if input starts with a period or dash
-        char firstChar = input.charAt(0);
+        char firstChar = username.charAt(0);
         if (!isPrefixChar(firstChar)) {
             return "";
         }
 
         // check if period or dash is always followed by at least one alphanumeric character
-        for (int i = 1; i < input.length(); i++) {
-            char currentChar = input.charAt(i);
-            char previousChar = input.charAt(i - 1);
+        for (int i = 1; i < username.length(); i++) {
+            char currentChar = username.charAt(i);
+            char previousChar = username.charAt(i - 1);
             if (isSpecialChar(previousChar) && !isAlphaNum(currentChar)) {
                 return "";
             }
         }
 
         // if all checks passed, return lowercase input
-        return input.toLowerCase();
+        return username.toLowerCase();
 
 
 }
 
 
+    
+    
+    public static boolean safePassword(String password) {
+    	
+    	
+    }
+    
 
     ////////////////////////////////////////////////////////////////////////////////////
 
@@ -213,17 +212,7 @@ public class Validator {
     
     
 
-// public static boolean isSpecialChar(char c) {
-//     return c == '.' || c == '-' || c == '!';
-// }
 
-// public static boolean isAlphaNum(char c) {
-//     return Character.isLetterOrDigit(c);
-// }
-
-// public static boolean isPrefixChar(char c) {
-//     return c == '.' || c == '-';
-// }
 
 
 
