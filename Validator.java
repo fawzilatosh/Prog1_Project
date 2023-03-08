@@ -6,7 +6,164 @@ public class Validator {
 
 
         }
-	
+	/*
+	 // First Method
+	 public static boolean isAlphaNum(char alphaNumeric) {                 
+	      
+	    	 if ((alphaNumeric >= '0' && alphaNumeric <= '9') || (alphaNumeric >= 'a' && alphaNumeric <= 'z') || (alphaNumeric >= 'A' && alphaNumeric <= 'Z')){
+	    	       return true ;
+	    	      }else{
+	    	       return false ;
+	    	      }        		
+		          }    
+	  // Second Method                       
+	public static boolean isSpecialChar(char specCharac) {                 
+	         
+	    	 if (specCharac == '_'  || specCharac == '-' || specCharac == '.'){
+	    	       return true ;
+	    	      }else{
+	    	       return false ;
+	    	      }        		
+		          }           
+	     // Third Method
+	public static boolean isPrefixChar(char prefCharac) {                 
+	         
+	    	 if (isSpecialChar(prefCharac)|| isAlphaNum(prefCharac)){
+	    	       return true ;
+	    	      }else{
+	    	       return false ;
+	    	      }        		
+		          }
+		          // Forth Method
+	public static boolean isDomainChar(char domCharac) {                 
+	     
+		 if (isSpecialChar(domCharac)|| isAlphaNum(domCharac)){
+		       return true ;
+		      }else{
+		       return false ;
+		      }        		
+	          }  
+		  // Fifth Method        
+	public static boolean singleAtSign(String str) {                 
+		int count=0;
+		      
+		
+			 for (int i=0;i< (str.length()-1);i++ ) {
+					if (str.charAt(i)== '@') {count +=  1;}
+					} 
+						if  (count ==1) return true;
+				
+					
+						else return false;
+			 }
+
+       
+	           // Sixeth Method
+	public static String fetchBeforeAt(String str) {  
+	String[] parts = str.split("\\@");
+    String firstPart = parts[0];
+    return firstPart;
+	}
+
+          // Seventh Method
+public static String fetchAfterAt(String str) {                 
+	String[] parts = str.split("\\@");
+    String secondPart = parts[1];
+    return secondPart;
+	} 
+
+
+     // eighteeth Method
+	public static boolean isPrefix(String prefix) {
+		
+		boolean word1bt1 = false;
+		boolean word1bt3 = false;
+		boolean word1bt2 = false;
+	    boolean word1bt4 = false;
+		if (prefix.length() > 1) 
+			 word1bt1 = true; 									     
+	    
+		for (int i=0;i< prefix.length();i++ ) {
+		
+		if ( isPrefixChar(prefix.charAt(i))== true ){
+			word1bt2 = true;
+		} else {word1bt2 = false;
+	     break;}	
+	    }
+		for (int i=0;i< prefix.length();i++ ) {
+			
+			if  ( isSpecialChar(prefix.charAt(i))== true){ 
+		          if (isAlphaNum(prefix.charAt(i+1))== true) 
+			word1bt4 = true;
+			 else word1bt4 = false; break;}
+		    } 										
+		if (isAlphaNum(prefix.charAt(0))== true) {
+			word1bt3 = true; }		    	    
+		if (word1bt1 == true && word1bt2 == true && word1bt3 == true && word1bt4 == true) return true; else return (false) ;
+		}
+		
+		// ninth Method
+			public static boolean isDomain(String str) {
+		
+	    // Split the input string into two parts using the period character as the separator
+	     String[] parts = str.split("\\.");
+	     // Store the first and second parts of the domain in separate variables
+	     String firstPart = parts[0];
+	     String secondPart = parts[1];
+	     
+	     if (firstPart.length() != 1) {
+	         return false;
+	     }
+	     
+	     if (secondPart.length() != 2) {
+	         return false;
+	     }
+	     
+	     // If either the first or second part is empty, it's not a valid domain
+	     if (firstPart.isEmpty() || secondPart.isEmpty()) {
+	         return false;
+	     }
+	     
+	     if (firstPart.isEmpty() || secondPart.isEmpty()) {
+	         return false;
+	     }
+	     
+	     // Loop through the characters in the first part of the domain
+	     for (int i = 0; i < firstPart.length(); i++) {
+	         char ch = firstPart.charAt(i);
+	       
+	         // If a character is not a letter, digit, period, or hyphen, it's not a valid domain
+	         if (isDomainChar(firstPart.charAt(i)) != true) {
+		         return false;
+		     }
+	       
+	         
+	         if ((isAlphaNum(firstPart.charAt(i))!= true) && ch == '_' ) {
+	             return false;
+	         }
+	         // If a period or hyphen is at the beginning or end of the first part, it's not a valid domain
+	         if ((isSpecialChar(ch) == true) && (i == 0 || i == firstPart.length() - 1)) {
+	             return false;
+	         }
+	         // If a period or hyphen is followed by a non-letter/digit character, it's not a valid domain
+	         if ((ch == '.' || ch == '-') && (isAlphaNum(firstPart.charAt(i + 1))!= true)) {
+	             return false;
+	         }
+	     }
+	     // Loop through the characters in the second part of the domain
+	     for (int i = 0; i < secondPart.length(); i++) {
+	         char ch = secondPart.charAt(i);
+	         // If a character is not a letter, it's not a valid domain
+	     
+	         
+	         if (!Character.isLetter(ch)) {
+	             return false;
+	        }
+	     }
+	     return true;
+		
+	}
+		*/
 	
 	// isAlphaNum() - check if a character is alphanumeric
 
